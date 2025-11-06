@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+    name: backend-svc
+    namespace: wl-ns
+spec:
+  selector:
+    app: backend-pod
+  type: NodePort
+  ports:
+  - name: wanderlust-backend-port
+    nodePort: 30002
+    protocol: TCP
+    port: 5000
+    targetPort: 5000
