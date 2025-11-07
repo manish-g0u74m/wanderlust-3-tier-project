@@ -5,4 +5,4 @@ metadata:
   name: frontend-config
   namespace: wl-ns
 data:
-  vite_api_path: "http://192.168.75.133:30002"
+  vite_api_path: "http://192.168.75.134:30002"
