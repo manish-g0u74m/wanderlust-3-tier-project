@@ -6,4 +6,4 @@ metadata:
   namespace: wl-ns
 data:
   mongo_uri: "mongodb://mongo-svc.wl-ns.svc.cluster.local/wanderlust"
-  cors-origin: "http://192.168.75.133:30001"
+  cors-origin: "http://192.168.75.134:30001"
