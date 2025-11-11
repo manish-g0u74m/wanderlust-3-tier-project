@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: frontend-deployment
+  namespace: wl-ns
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app : frontend-pod
+  template:
+    metadata:
+      labels:
+        app: frontend-pod
+    spec:
+      containers:
+        - name: wl-frontend
+          image: g0u74m/wanderlust-frontend:latest
+          ports:
+            - containerPort: 5173
+          env:
+            - name: VITE_API_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: frontend-config
+                  key: vite_api_path

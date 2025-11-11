@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend-svc
+  namespace: wl-ns
+spec:
+  selector:
+    app: frontend-pod
+  type: NodePort
+  ports:
+    - name: wanderlust-frontend-port
+      protocol: TCP
+      port: 5173
+      targetPort: 5173
+      nodePort: 30001

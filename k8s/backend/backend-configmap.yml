@@ -1,0 +1,9 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: wl-ns
+data:
+  mongo_uri: "mongodb://mongo-svc.wl-ns.svc.cluster.local/wanderlust"
+  cors-origin: "http://192.168.75.134:30001"
